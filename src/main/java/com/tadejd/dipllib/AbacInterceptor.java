@@ -118,21 +118,21 @@ public class AbacInterceptor extends AuthorizationInterceptor implements CustomI
     @Override
     public void hookResourcePreCreate(RequestDetails theRequest, IBaseResource theResource, Pointcut thePointcut) {
         super.hookResourcePreCreate(theRequest, theResource, thePointcut);
-//        handleSingleResource(theRequest, (Resource)theResource);
+        handleSingleResource(theRequest, (Resource)theResource);
     }
 
     @Hook(Pointcut.STORAGE_PRESTORAGE_RESOURCE_DELETED)
     @Override
     public void hookResourcePreDelete(RequestDetails theRequest, IBaseResource theResource, Pointcut thePointcut) {
         super.hookResourcePreDelete(theRequest, theResource, thePointcut);
-//        handleSingleResource(theRequest, (Resource)theResource);
+        handleSingleResource(theRequest, (Resource)theResource);
     }
 
     @Hook(Pointcut.STORAGE_PRESTORAGE_RESOURCE_UPDATED)
     @Override
     public void hookResourcePreUpdate(RequestDetails theRequest, IBaseResource theOldResource, IBaseResource theNewResource, Pointcut thePointcut) {
         super.hookResourcePreUpdate(theRequest, theOldResource, theNewResource, thePointcut);
-//        handleSingleResource(theRequest, (Resource)theOldResource);
+        handleSingleResource(theRequest, (Resource)theOldResource);
     }
 
     private void handleSingleResource(RequestDetails theRequest, Resource theResource) {
